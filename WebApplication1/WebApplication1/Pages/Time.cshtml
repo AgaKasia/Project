@@ -1,0 +1,55 @@
+﻿@page
+@model WebApplication1.Pages.TimeModel
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Time</title>
+    </head>
+    <body>
+
+        <form method="post">
+
+            @for (int i = 0; i < Model.SelectedDay.Length; i++)
+
+            {
+
+                <input asp-for=SelectedDay[i] />
+
+                <label asp-for=SelectedDay[i]>@Model.Days[i]</label>
+
+            }
+
+            <button type="submit"> Click Here </button>
+
+        </form>
+
+        <ul>
+            @for (int i = 0; i < Model.SelectedDay.Length; i++)
+
+            {
+                if (Model.SelectedDay[i])
+                {
+                    <li>
+                        @Model.Days[i]
+                    </li>
+                }
+
+            }
+        </ul>
+
+
+
+    </body>
+</html>
+}
+
+
+

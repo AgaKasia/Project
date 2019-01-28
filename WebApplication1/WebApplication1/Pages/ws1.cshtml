@@ -1,0 +1,40 @@
+﻿@page
+@model WebApplication1.Pages.ws1Model
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport"content="width=device-width"/>
+    <title>ws1</title>
+</head>
+<body>
+   
+
+@{ 
+    var @massage = "Rugby is popular";
+    <h2>@massage</h2>
+    <ul>
+        @foreach(string country in Model.RubyArray)
+        {
+            <li>
+                @country
+            </li>
+        }
+    </ul>
+}
+
+    <form method="post">
+        <label for="fname">Enter First Name </label>
+        <input type ="text"name="fname"id="fname"/>
+        <button type ="submit"> Click here to submit</button>
+    </form>
+
+    <h1>@Model.Welcome</h1>
+
+</body>
+</html>
+

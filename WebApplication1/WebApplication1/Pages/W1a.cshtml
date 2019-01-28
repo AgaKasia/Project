@@ -1,0 +1,62 @@
+﻿@page
+@model WebApplication1.Pages.W1aModel
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ws1b</title>
+</head>
+<body>
+
+    <form method="post">
+
+        <lable for="number1">
+            Enter number 1
+        </lable>
+
+        <input type="number" id="number1" name="number1" value="@Model.Number1" />
+
+        <button type="submit">
+            Submit Number
+        </button>
+
+
+
+
+        <lable for="number2">
+           Enter number 2
+        </lable>
+
+        <input type="number" id="number2" name="number2" value="@Model.Number2" />
+
+        <button type="submit">
+            Submit Number
+        </button>
+
+        <input type="radio" value="add" name="operation" id="op1" checked />
+        <label for="op1">ADDITION</label>
+
+        <input type="radio" value="subtract" name="operation" id="op2" />
+        <label for="op2">SUBTRACT</label>
+
+        <input type="radio" value="multiply" name="operation" id="op3" />
+        <label for="op3">MULTIPLY</label>
+
+        <input type="radio" value="divide" name="operation" id="op4" />
+        <label for="op4">DIVIDE</label>
+
+    </form>
+
+    @Model.SumMassage
+
+    @Model.ResultMessage
+
+</body>
+</html>
